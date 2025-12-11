@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, CheckCircle, Rocket, TrendingUp, Users, Target } from 'lucide-react';
 import { Button } from './ui/Button';
+import Image from 'next/image';
 
 export const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -35,7 +36,7 @@ export const Hero = () => {
           }}
           transition={{ type: "spring", stiffness: 50, damping: 20 }}
           style={{
-            background: `radial-gradient(circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%, rgba(37, 99, 235, 0.15) 0%, rgba(168, 85, 247, 0.15) 50%, transparent 70%)`,
+            background: `radial-gradient(circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%, rgba(37, 99, 235, 0.15) 0%, rgba(168, 85, 247, 0.15) 10%, transparent 30%)`,
           }}
         />
         
@@ -268,8 +269,19 @@ export const Hero = () => {
                     className="flex items-center space-x-4 mb-8"
                   >
                     <div className="relative">
-                      <div className="w-16 h-16 bg-gradient-to-br from-blumine-500 to-luckypoint-500 rounded-2xl flex items-center justify-center shadow-lg">
-                        <span className="text-white font-bold text-2xl">AIS</span>
+                      
+                      <div className="w-14 h-14 rounded-xl flex items-center justify-center shadow-xl">
+                        {/* <div className="text-white font-bold text-xl">AIS</div> */}
+                        {/* Fallback if logo.png doesn't exist - Uncomment Image when you have logo.png */}
+                        
+                        <Image 
+                          src='/logo.png'
+                          alt="Axperia Logo" 
+                          width={86}
+                          height={86}
+                          className="object-contain p-0"
+                        />
+                        
                       </div>
                       <motion.div
                         animate={{ rotate: 360 }}

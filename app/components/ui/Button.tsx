@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 
 interface ButtonProps {
+  type?: string,
   children: ReactNode;
   variant?: 'primary' | 'secondary' | 'outline';
   size?: 'sm' | 'md' | 'lg';
@@ -10,6 +11,7 @@ interface ButtonProps {
 }
 
 export const Button = ({
+  type,
   children,
   variant = 'primary',
   size = 'md',
